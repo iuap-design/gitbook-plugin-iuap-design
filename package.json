@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-iuap-desigin",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "gitbook plugin for iuap-deisgn",
   "main": "index.js",
   "scripts": {
