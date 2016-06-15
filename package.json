@@ -3,6 +3,9 @@
   "version": "1.0.3",
   "description": "gitbook plugin for iuap-deisgn",
   "main": "index.js",
+  "engines": {
+    "gitbook": ">1.x.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,10 +23,5 @@
   "bugs": {
     "url": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin/issues"
   },
-  "homepage": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin#readme",
-  "dependencies": {
-    "gitbook": "^3.1.1",
-    "jquery": "^3.0.0",
-    "lodash": "^4.13.1"
-  }
+  "homepage": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin#readme"
 }
