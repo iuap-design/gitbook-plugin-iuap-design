@@ -64,7 +64,7 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 
 
 		/* 主体引入uui内容 */
-		var ctx = '../../assets/1.0.0';
+		var ctx = '../../../assets/1.0.0';
 		var tpl = [
 			'<link rel="stylesheet" href="'+ ctx +'/css/font-awesome.css">',
 	       	'<link rel="stylesheet" type="text/css" href="'+ ctx +'/css/u.css">',
