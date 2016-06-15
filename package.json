@@ -1,7 +1,7 @@
 {
-  "name": "gitbook-plugin-iuap-desigin",
+  "name": "gitbook-plugin-iuap-design",
   "version": "1.0.4",
-  "description": "gitbook plugin for iuap-deisgn",
+  "description": "gitbook plugin for iuap-design",
   "main": "index.js",
   "engines": {
     "gitbook": ">1.x.x"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iuap-design/gitbook-plugin-iuap-desigin.git"
+    "url": "git+https://github.com/iuap-design/gitbook-plugin-iuap-design.git"
   },
   "keywords": [
     "gitbook",
@@ -21,7 +21,7 @@
   "author": "liuyuekai,guoyongfeng",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin/issues"
+    "url": "https://github.com/iuap-design/gitbook-plugin-iuap-design/issues"
   },
-  "homepage": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin#readme"
+  "homepage": "https://github.com/iuap-design/gitbook-plugin-iuap-design#readme"
 }
