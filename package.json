@@ -1,0 +1,29 @@
+{
+  "name": "gitbook-plugin-iuap-desigin",
+  "version": "1.0.0",
+  "description": "gitbook plugin for iuap-deisgn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iuap-design/gitbook-plugin-iuap-desigin.git"
+  },
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "iuap-design"
+  ],
+  "author": "liuyuekai,guoyongfeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin/issues"
+  },
+  "homepage": "https://github.com/iuap-design/gitbook-plugin-iuap-desigin#readme",
+  "dependencies": {
+    "gitbook": "^3.1.1",
+    "jquery": "^3.0.0",
+    "lodash": "^4.13.1"
+  }
+}
