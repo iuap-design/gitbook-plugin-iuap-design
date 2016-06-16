@@ -44,11 +44,11 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 
 		var $body = $('body');
 		// 文档部分
-		var $book = $('.book');  
+		var $book = $('.book');
 		// 文档左侧目录
-		var $summary = $('.book-summary'); 
+		var $summary = $('.book-summary');
 		// 文档右侧主体
-		var $bookBody = $('.book-body'); 
+		var $bookBody = $('.book-body');
 		var $container = $('<div class="container"></div>');
 		var $containerDiv = $('<div class="container-div"></div>');
 		$book.append($container);
@@ -56,21 +56,21 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 		$containerDiv.append($summary);
 		$containerDiv.append($bookBody);
 
-		// 左侧目录修改 
+		// 左侧目录修改
 		var $summaryUl = $('ul',$summary);
 	 	var $firstLi = $('li:first',$summaryUl);
 	 	// 去掉介绍
-		$firstLi.remove(); 
+		$firstLi.remove();
 		var $dividerLi = $('.divider',$summaryUl);
 		var $dividerLiNext = $('.divider + li',$summaryUl);
 		// 删除下面横线及之后的li
-		$dividerLi.remove(); 
+		$dividerLi.remove();
 		$dividerLiNext.remove();
 
-		var $summaryAB = $('a b',$summary); 
+		var $summaryAB = $('a b',$summary);
 		$summaryAB.remove();// 去掉目录的编号
 
-		// 右侧主体修改 
+		// 右侧主体修改
 
 		var $bookHeadr = $('.book-header',$bookBody);
 		$bookHeadr.remove();
@@ -82,8 +82,8 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 		$pageWrapper.append($prevA);
 		$pageWrapper.append($nextA);
 
-		// 主体引入uui内容 
-		var ctx = 'http://design.yyuap.com/static/uui/3.0.1';
+		// 主体引入uui内容
+		var ctx = 'http://design.yyuap.com/static/uui-original/1.0.1';
 		var tpl = [
 			'<link rel="stylesheet" href="'+ ctx +'/css/font-awesome.css">',
 	       	'<link rel="stylesheet" type="text/css" href="'+ ctx +'/css/u.css">',
@@ -105,7 +105,7 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 
 
         $('body').css('display','block');
-        
+
         function bodyScrollFun(){
         	var st = document.body.scrollTop || document.documentElement.scrollTop;
         	var t = 215 - st;
