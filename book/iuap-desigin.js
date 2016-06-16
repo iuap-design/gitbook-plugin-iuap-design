@@ -82,7 +82,6 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 		$pageWrapper.append($prevA);
 		$pageWrapper.append($nextA);
 
-		document.write('<script>document.domain = "http://design.yyuap.com";</script>')
 		// 主体引入uui内容 
 		var ctx = 'http://design.yyuap.com/static/uui/3.0.1';
 		var tpl = [
