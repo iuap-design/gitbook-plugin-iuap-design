@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-iuap-design",
-  "version": "1.1.2",
+  "version": "1.0.4",
   "description": "gitbook plugin for iuap-design",
   "main": "index.js",
   "engines": {
@@ -18,6 +18,9 @@
     "plugin",
     "iuap-design"
   ],
+  "dependencies": {
+    "underscore": "*"
+  },
   "author": "liuyuekai,guoyongfeng",
   "license": "MIT",
   "bugs": {
