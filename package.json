@@ -19,6 +19,7 @@
     "iuap-design"
   ],
   "dependencies": {
+    "cheerio": "*",
     "underscore": "*"
   },
   "author": "liuyuekai,guoyongfeng",

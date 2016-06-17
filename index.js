@@ -1,9 +1,10 @@
-
+var cheerio = require('cheerio');
 var _ = require('underscore');
 
 // insert anchor link into section
 var insertAnchors = function(section) {
   // 文档主体部分html对应的section内容再次修改，可直接改变生成的html，其他部分的修改由iuap-design.js处理
+  var $ = cheerio.load(section.content);
 	// 添加引用的js和css
 	var jsCssStr = ''
 	var ctx = 'http://design.yyuap.com/static/uui-original/1.0.1';
