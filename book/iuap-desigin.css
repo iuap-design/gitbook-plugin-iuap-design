@@ -49,6 +49,9 @@ html{
     height:100% !important;
 }
 
+ul {
+    list-style-type: inherit;
+}
 .book .book-body, .book .book-body .body-inner{
     overflow-y: visible;
     position:relative;
@@ -92,7 +95,7 @@ html{
 
 body{
     display: none;
-} 
+}
 
 
 
@@ -242,12 +245,3 @@ table.u-table-base.u-table-striped thead tr{
 #anchors-navbar:hover{
     background: #fff;
 }
-
-
-
-
-
-
-
-
-
