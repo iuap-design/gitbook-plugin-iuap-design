@@ -13,14 +13,17 @@ var insertAnchors = function(section) {
     for(var i=0;i<linkArray.length;i++){
     	jsCssStr += '<link rel="stylesheet" href="'+ ctx + linkArray[i] + '">\r\n';
   	}
+    jsCssStr += '<link rel="stylesheet" href="http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css">\r\n';
   	jsCssStr += '<script src="http://design.yyuap.com/static/jquery/jquery-1.11.2.js"></script>\r\n';
   	jsCssStr += '<script src="http://design.yyuap.com/static/knockout/knockout-3.2.0.debug.js"></script>\r\n';
+    jsCssStr += '<script src="http://design.yyuap.com/static/highlight/highlight.min.js"></script>\r\n';
+    // new add
   	for(var j=0;j<scriptArray.length;j++){
   		jsCssStr += '<script src="'+ ctx + scriptArray[j] + '"></script>\r\n';
   	}
 
 
-    section.content = jsCssStr + $.html();
+    section.content = jsCssStr + $.html().replace(/<p><script>/g,'<script>');
 };
 
 module.exports = {
