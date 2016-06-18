@@ -118,7 +118,7 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
         // backtop
         // var bTop = document.getElementById('goTop');
         // bTop.innerHTML = '<button type="button" class="btn btn-ghost btn-primary btn-sm">回到顶部</button>';
-
+        hljs.initHighlightingOnLoad();
 
 
 	});
