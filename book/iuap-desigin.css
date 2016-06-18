@@ -248,6 +248,11 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     background: transparent;
 }
 
+/*list style*/
+.book .book-body .page-wrapper .page-inner section.normal li{
+    list-style-type: disc;
+}
+
 
 
 
