@@ -262,8 +262,24 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 .book .book-header .btn{
     border:0px;
 }
+.book .book-header .pull-right{
+    display: none;
+}
 
-
+/*left secondary menu*/
+.book .book-summary ul.summary li span{
+    cursor: pointer;
+    padding-left:30px;
+}
+.book .book-summary ul.summary li span b {
+    position:absolute;
+    left:0;
+}
+.book .book-summary ul.summary li span i{
+    left:10px;
+    top:10px;
+    width:100%;
+}
 
 
 

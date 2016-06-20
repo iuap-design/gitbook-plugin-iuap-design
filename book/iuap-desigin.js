@@ -120,6 +120,19 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
         // bTop.innerHTML = '<button type="button" class="btn btn-ghost btn-primary btn-sm">回到顶部</button>';
         hljs.initHighlightingOnLoad();
 
+        // mobile side menu init
+        (function(){
+        	function mobileNav(){
+	        	var bodyWidth = document.body.offsetWidth;
+	        	var eleBook = document.querySelectorAll('.book')[0];
+	        	if(bodyWidth<=600) {
+	        		eleBook.classList ? eleBook.classList.remove('with-summary') : eleBook.className.replace(new RegExp('(^|\\b)' + 'with-summary'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+	        	}
+       		}
+       		mobileNav();
+       		window.onresize = mobileNav;
+        })();
+
 
 	});
 });
