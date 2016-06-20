@@ -14,14 +14,11 @@
     overflow: hidden;
 }
 
-.book .book-summary .exc-trigger {
-  position: static;
-}
 .book .book-summary ul.summary li.active>a{
     color:#2db7f5;
-    border-right: 2px solid #2db7f5;
+    /*border-right: 2px solid #2db7f5;*/
 }
-.book .book-summary ul.summary li a{
+/*.book .book-summary ul.summary li a{
     padding-left: 0px !important;
 }
 .book .book-summary ul.summary li a:hover{
@@ -30,7 +27,7 @@
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     background-color: #eaf8fe;
-}
+}*/
 
 .book .book-body .page-wrapper .page-inner{
     max-width: 1000px;
@@ -73,7 +70,7 @@ html{
 }
 
 .example-content{
-    padding: 20px 30px;
+    padding: 10px;
     background: #fff;
     border: 1px solid #ddd;
     border-bottom: 0px;
@@ -97,7 +94,7 @@ html{
 
 body{
     display: none;
-}
+} 
 
 
 
@@ -120,7 +117,7 @@ body{
 }
 
 .book .book-summary ul.summary li a, .book .book-summary ul.summary li span{
-    padding-left:0px;
+    /*padding-left:0px;*/
     font-size: 14px;
 }
 
@@ -283,3 +280,14 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     top:10px;
     width:100%;
 }
+.book .book-summary .exc-trigger{
+    left:0px;
+    top:8px;
+}
+
+
+
+
+
+
+
