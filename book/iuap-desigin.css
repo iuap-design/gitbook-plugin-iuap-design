@@ -1,6 +1,6 @@
 .book .book-summary{
     position: absolute;
-    left: 0px;
+    left: -240px;
     top: 0px;
     display: inline-block;
     background:#f8f8f8;
@@ -11,6 +11,7 @@
 
 .container-div{
     position: relative;
+    overflow: hidden;
 }
 
 .book .book-summary ul.summary li.active>a{
@@ -75,6 +76,7 @@ html{
     border-bottom: 0px;
 }
 
+/*wd*/
 @media (min-width:600px){
     .book.with-summary .book-body{
         padding-left: 240px;
@@ -251,6 +253,14 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 /*list style*/
 .book .book-body .page-wrapper .page-inner section.normal li{
     list-style-type: disc;
+}
+
+/*left mobile show*/
+.book .book-header h1{
+    display: none;
+}
+.book .book-header .btn{
+    border:0px;
 }
 
 

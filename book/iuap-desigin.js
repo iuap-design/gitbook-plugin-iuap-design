@@ -74,8 +74,8 @@ require(['gitbook', 'jQuery', 'lodash'], function (gitbook, $, _) {
 
 		// 右侧主体修改 
 
-		var $bookHeadr = $('.book-header',$bookBody);
-		$bookHeadr.remove();
+		// var $bookHeadr = $('.book-header',$bookBody);
+		// $bookHeadr.remove();
 
 		// 将超链接放到page-wrapper的最后
 		var $pageWrapper = $('.page-wrapper');
