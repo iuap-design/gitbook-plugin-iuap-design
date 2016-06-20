@@ -26,7 +26,7 @@ module.exports = {
             var cssStr = '';
             var ctx = 'http://design.yyuap.com/static/uui-original/1.0.1';
             var lightPath = "http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css";
-            var highlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
+            var hightlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
 
             // CSS Path Array
             var linkArray=[
