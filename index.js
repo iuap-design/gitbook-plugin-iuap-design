@@ -59,13 +59,13 @@ module.exports = {
             var desc = this.options.pluginsConfig['iuap-design']['desc']
               || "简单易用，轻量快捷，为移动端服务的前端框架";
 
-            var headPath = path.join('../../dist/pages/common/','header.html');
+            var headPath = path.join('../dist/pages/common/','header.html');
             var headCont = fs.readFileSync(headPath, {encoding: "utf-8"});
 
             var navToggleSnippets = '<div class="nav-toggle" data-offcanvas="open"><i class="flaticon-list26"></i></div>';
 
             headCont = headCont
-              .replace(/dist/g,'../..')
+              .replace(/dist/g,'..')
               .replace(navToggleSnippets,'');
 
             var banner = [
@@ -91,10 +91,10 @@ module.exports = {
            */
           "body:end": function(current) {
 
-            var footPath = path.join('../../dist/pages/common/','footer.html');
+            var footPath = path.join('../dist/pages/common/','footer.html');
             var footCont = fs.readFileSync(footPath, {encoding: "utf-8"});
 
-            footCont = footCont.replace(/dist/g,'../..');
+            footCont = footCont.replace(/dist/g,'..');
 
             var jsStr = '';
             var jsLib = 'http://design.yyuap.com/static/';
