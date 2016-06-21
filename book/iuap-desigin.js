@@ -87,6 +87,7 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
     var h = parseInt(oH) - 80;
 
     $book.css('min-height',parseInt(oH) - 60 + 'px');
+    $containerDiv.css('min-height',parseInt(oH) - 120 + 'px');
 
     // backtop
     hljs.initHighlightingOnLoad();
@@ -104,4 +105,30 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
    		mobileNav();
    		window.onresize = mobileNav;
     })();
+
+    // main menu slide
+    (function(){
+
+		var openOffcanvas = $('[data-offcanvas="open"]');
+		var closeOffcanvas = $('[data-offcanvas="close"]');
+		var offcanvasNav = $('.offcanvas-nav');
+		openOffcanvas.click(function(){
+			openOffcanvas.addClass('nav-open');
+			offcanvasNav.addClass('open');
+			$('body').append('<div class="offcanvas-backdrop"></div>');
+		});
+		closeOffcanvas.click(function(){
+			openOffcanvas.removeClass('nav-open');
+			offcanvasNav.removeClass('open');
+			$('.offcanvas-backdrop').remove();
+		});
+		$(document).on('click', '.offcanvas-backdrop', function(){
+			openOffcanvas.removeClass('nav-open');
+			offcanvasNav.removeClass('open');
+			$('.offcanvas-backdrop').remove();
+		});
+
+    })();
+
+
 });
