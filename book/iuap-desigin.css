@@ -3,10 +3,15 @@
     left: -240px;
     top: 0px;
     display: inline-block;
-    background:#f8f8f8;
     border-right: 1px solid #e3e3e3;
     width:240px;
     margin-top: 30px;
+    overflow: auto;
+    background: #fff;
+}
+
+.book .book-summary ul.summary{
+    position:relative;
 }
 
 .container-div{
@@ -17,6 +22,7 @@
 .book .book-summary ul.summary li.active>a{
     color:#2db7f5;
 }
+
 
 .book .book-body .page-wrapper .page-inner{
     max-width: 1000px;
@@ -42,16 +48,13 @@ html{
 .book .book-body, .book .book-body .body-inner{
     overflow-y: visible;
     position:relative;
-    background: #f8f8f8;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal{
-    background: #f8f8f8;
     font-size: 14px;
 }
 .book{
     height: auto;
-    background: #f8f8f8;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal pre{
@@ -215,7 +218,7 @@ table.u-table-base.u-table-striped thead tr{
 #goTop,#anchors-navbar{
     position: fixed;
     border: 1px solid #2db7f5;
-    z-index: 999;
+    z-index: 99;
     cursor: pointer;
     padding: 5px 10px;
     box-shadow: none;
@@ -293,6 +296,20 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     text-align: right;
 }
 
+
+@media screen and (max-width:600px) {
+    #anchors-navbar,#goTop{
+        display: none;
+    }
+
+    .book.with-summary .book-body{
+        -webkit-transform: translate(calc(240px),0); 
+        -moz-transform: translate(calc(240px),0);
+        -ms-transform: translate(calc(240px),0);
+        -o-transform: translate(calc(240px),0);
+        transform: translate(calc(240px),0);
+    }
+}
 
 
 

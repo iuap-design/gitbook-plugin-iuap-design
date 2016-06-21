@@ -32,9 +32,7 @@ module.exports = {
             var linkArray=[
               '/fonts/font-awesome/css/font-awesome.css',
               '/css/u.css',
-              '/css/u-extend.css',
-              '/css/tree.css',
-              '/css/grid.css'
+              '/css/u-extend.css'
             ];
 
             for(var i = 0, len = linkArray.length; i < len; i++){
@@ -98,10 +96,7 @@ module.exports = {
 
             var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
             var scriptArray = [
-              '/js/u-polyfill.js',
-              '/js/u.js',
-              '/js/u-tree.js',
-              '/js/u-grid.js'
+              '/js/u-polyfill.js'
             ];
 
             for ( var j = 0, len = scriptArray.length; j < len; j++ ) {
