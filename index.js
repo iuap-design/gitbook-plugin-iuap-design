@@ -24,7 +24,7 @@ module.exports = {
           "head:end": function(current) {
 
             var cssStr = '';
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.1';
+            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
             var lightPath = "http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css";
             var hightlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
 
@@ -62,10 +62,6 @@ module.exports = {
             var headPath = path.join('../../dist/pages/common/','header.html');
             var headCont = fs.readFileSync(headPath, {encoding: "utf-8"});
 
-            var navToggleSnippets = '<div class="nav-toggle" data-offcanvas="open"><i class="flaticon-list26"></i></div>';
-
-            headCont = headCont.replace(navToggleSnippets,'');
-
             var banner = [
               '<div class="banner">',
                 ' <div class="container">',
@@ -100,7 +96,7 @@ module.exports = {
               jsStr += '<script src="'+ jsLib + LibArray[i] + '"></script>\r\n';
             }
 
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.1';
+            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
             var scriptArray = [
               '/js/u-polyfill.js',
               '/js/u.js',
