@@ -82,7 +82,7 @@ html{
 
 .book.with-summary .book-body{
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 .book .book-summary .book-search{
     display: none;
@@ -256,7 +256,7 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 }
 
 /*list style*/
-.book .book-body .page-wrapper .page-inner section.normal li{
+.book .book-body .page-wrapper .page-inner section.normal>ul>li{
     list-style-type: disc;
 }
 
@@ -315,19 +315,45 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     text-align: right;
 }
 
+/*main nav change distance*/
+header.navbar .logo{
+    margin-right:10px;
+}
+header.navbar .toolbar .action-btn{
+    margin:0 18px;
+}
 
+/*mobile style*/
 @media screen and (max-width:600px) {
     #anchors-navbar,#goTop{
         display: none;
     }
-
     .book.with-summary .book-body{
         -webkit-transform: translate(calc(240px),0); 
         -moz-transform: translate(calc(240px),0);
         -ms-transform: translate(calc(240px),0);
         -o-transform: translate(calc(240px),0);
         transform: translate(calc(240px),0);
+        -webkit-transition: -webkit-transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        -moz-transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        -o-transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
     }
+
+    /*mobile content*/
+    .book .book-body .page-wrapper .page-inner{
+        margin:0px;
+    }
+    .book .book-body .page-wrapper .page-inner section{
+        padding:5px;
+    }
+    .book .book-header{
+        padding:0px;
+    }
+    .book .book-header .btn{
+        padding:0 15px 0 0;
+    }
+
 }
 
 
