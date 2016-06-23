@@ -41,10 +41,10 @@ module.exports = {
           "head:end": function(current) {
 
             var cssStr = '';
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
+            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
             var lightPath = "http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css";
             var hightlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
-            var ujsPath = "http://design.yyuap.com/static/uui-original/1.0.2/js/u.js"
+            var ujsPath = "http://design.yyuap.com/static/uui-original/1.0.3/js/u.js"
 
             // CSS Path Array
             var linkArray=[
@@ -115,7 +115,7 @@ module.exports = {
               jsStr += '<script src="'+ jsLib + LibArray[i] + '"></script>\r\n';
             }
 
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
+            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
             var scriptArray = [
               '/js/u-polyfill.js',
               // '/js/u.js'
