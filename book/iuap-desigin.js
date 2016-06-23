@@ -133,23 +133,38 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 			});
 	    })();
 
-	    /**
-	     * [description] Concat & Covert md file jsStr
-	     * @return {[type]} [description]
-	     */
-	    (function(){
-	    	function buildJs(){
-	    		var docCode = document.querySelectorAll('.jstag');
-		    	var jsTag = document.createElement('script');
-		    	for(var i=0; i<docCode.length; i++){
-		    		jsTag.innerHTML += docCode[i].textContent;
-		    	}
-		    	document.body.appendChild(jsTag);
+	    var uDesign = {
+	    	init: function() {
+	    		this.buildTag();
+	    	},
+	    	/**
+	    	 * 创建<style>,<script>标签
+	    	 * @return {[type]} [description]
+	    	 */
+	    	buildTag: function() {
+	    		var jsCode = document.querySelectorAll('.jstag');
+	    		var cssCode = document.querySelectorAll('.csstag');
+	    		var jsTag = document.createElement('script');
+	    		var cssTag = document.createElement('style');
+	    		
+	    		for(var i=0, jsLen = jsCode.length; i<jsLen; i++) {
+	    			jsTag.innerHTML += jsCode[i].textContent;
+	    		}
+	    		document.body.appendChild(jsTag);
+
+	    		for(var j=0, cssLen = cssCode.length; j<cssLen; j++ ) {
+	    			cssTag.innerHTML = cssCode[j].textContent;
+	    		}
+	    		document.head.appendChild(cssTag);
 	    	}
-	    	buildJs();
-	    })();
+	    }
+	    
+	    uDesign.init();
+
 
 	});
+
+	
 
 
 

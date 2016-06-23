@@ -44,6 +44,7 @@ module.exports = {
             var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
             var lightPath = "http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css";
             var hightlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
+            var jqueryPath = "http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"
             var ujsPath = "http://design.yyuap.com/static/uui-original/1.0.3/js/u.js"
 
             // CSS Path Array
@@ -61,8 +62,9 @@ module.exports = {
             }
 
             cssStr += '<link rel="stylesheet" href="' + lightPath + '">\r\n';
-            cssStr += '<script src="' + hightlightPath + '"></script>';
-            cssStr += '<script src="' + ujsPath + '"></script>'
+            cssStr += '<script src="' + jqueryPath + '"></script>\r\n';
+            cssStr += '<script src="' + hightlightPath + '"></script>\r\n';
+            cssStr += '<script src="' + ujsPath + '"></script>\r\n';
 
             return cssStr;
           },
