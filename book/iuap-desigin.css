@@ -295,7 +295,49 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 .book .book-body .page-wrapper .page-inner section.normal table tbody td:last-child{
     text-align: right;
 }
-
+h3.u-panel-title{
+    margin:0!important;
+}
+.u-panel .u-panel-body>h4{
+    margin-top:0!important;
+    margin-bottom: 10px!important;
+}
+.tooltip-primary.top .tooltip-arrow {
+    border-top-color: rgb(63,81,181) !important;
+}
+.tooltip-info.top .tooltip-arrow {
+    border-top-color: rgb(0,188,212) !important;
+}
+.tooltip-warning.top .tooltip-arrow {
+    border-top-color: rgb(255,152,0) !important;
+}
+.tooltip-success.top .tooltip-arrow {
+    border-top-color: rgb(76,175,80) !important;
+}
+.tooltip-danger.top .tooltip-arrow {
+    border-top-color: rgb(244,67,54) !important;
+}
+.tooltip.top .tooltip-arrow{
+    bottom: 1px!important;
+}
+.tooltip.bottom .tooltip-arrow{
+    top: 1px !important
+}
+.tooltip.right .tooltip-arrow{
+    left: 1px !important;
+}
+.tooltip.right .tooltip-arrow{
+    border-right-color: #3f51b5 !important;
+}
+.tooltip.left .tooltip-arrow{
+    border-left-color: #3f51b5 !important;
+}
+.tooltip.top .tooltip-arrow{
+    border-top-color: #3f51b5 !important;
+}
+.tooltip.bottom .tooltip-arrow{
+    border-bottom-color: #3f51b5 !important;
+}
 
 @media screen and (max-width:600px) {
     #anchors-navbar,#goTop{
