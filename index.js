@@ -3,9 +3,26 @@ var _ = require('underscore');
 var fs = require('fs');
 var path = require('path');
 
+var insertAnchors = function(section) {
+  // 文档主体部分html对应的section内容再次修改，可直接改变生成的html，其他部分的修改由iuap-design.js处理
+  // 添加引用的js和css
+    // section.content = $.html();
+    section.content = section.content.replace(/div class="jstag"/g,'script')
+};
+
+
 module.exports = {
     book: {
         assets: ".",
+    },
+    hooks: {
+        "page": function (page) { // before html generation
+            // _.forEach(page.sections, insertAnchors);
+            // console.log(page.sections[0].content);
+            // page.sections[0].content = page.sections[0].content.replace(/div class="jstag"/g,'script');
+
+            return page;
+        }
     },
     website: {
         assets: './book',
@@ -24,15 +41,19 @@ module.exports = {
           "head:end": function(current) {
 
             var cssStr = '';
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
+            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
             var lightPath = "http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css";
             var hightlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
+            var jqueryPath = "http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"
+            var ujsPath = "http://design.yyuap.com/static/uui-original/1.0.3/js/u.js"
 
             // CSS Path Array
             var linkArray=[
               '/fonts/font-awesome/css/font-awesome.css',
               '/css/u.css',
               '/css/u-extend.css'
+              // '/css/tree.css',
+              // '/css/grid.css'
             ];
 
             for(var i = 0, len = linkArray.length; i < len; i++){
@@ -41,7 +62,9 @@ module.exports = {
             }
 
             cssStr += '<link rel="stylesheet" href="' + lightPath + '">\r\n';
-            cssStr += '<script src="' + hightlightPath + '"></script>';
+            cssStr += '<script src="' + jqueryPath + '"></script>\r\n';
+            cssStr += '<script src="' + hightlightPath + '"></script>\r\n';
+            cssStr += '<script src="' + ujsPath + '"></script>\r\n';
 
             return cssStr;
           },
@@ -94,15 +117,18 @@ module.exports = {
               jsStr += '<script src="'+ jsLib + LibArray[i] + '"></script>\r\n';
             }
 
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.2';
+            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
             var scriptArray = [
-              '/js/u-polyfill.js'
+              '/js/u-polyfill.js',
+              // '/js/u.js'
+              // '/js/u-tree.js',
+              // '/js/u-grid.js'
             ];
 
             for ( var j = 0, len = scriptArray.length; j < len; j++ ) {
               jsStr += '<script src="'+ ctx + scriptArray[j] + '"></script>\r\n';
             }
-
+            
             return footCont + jsStr;
           }
         }
