@@ -27,10 +27,10 @@ module.exports = {
     website: {
         assets: './book',
         js: [
-            'iuap-desigin.js'
+            'iuap-design.js'
         ],
         css: [
-            'iuap-desigin.css'
+            'iuap-design.css'
         ],
         html: {
           /**
