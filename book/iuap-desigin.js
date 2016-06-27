@@ -6,7 +6,7 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 	 * @param  {[type]} function (             [description]
 	 * @return {[type]}          [description]
 	 */
-	gitbook.events.bind('start', function () { 
+	gitbook.events.bind('start', function () {
 	});
 
 	/**
@@ -136,6 +136,9 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 	    var uDesign = {
 	    	init: function() {
 	    		this.buildTag();
+
+					console.log( $.mCustomScrollbar );
+					
 	    	},
 	    	/**
 	    	 * 创建<style>,<script>标签
@@ -146,7 +149,7 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 	    		var cssCode = document.querySelectorAll('.csstag');
 	    		var jsTag = document.createElement('script');
 	    		var cssTag = document.createElement('style');
-	    		
+
 	    		for(var i=0, jsLen = jsCode.length; i<jsLen; i++) {
 	    			jsTag.innerHTML += jsCode[i].textContent;
 	    		}
@@ -158,13 +161,13 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 	    		document.head.appendChild(cssTag);
 	    	}
 	    }
-	    
+
 	    uDesign.init();
 
 
 	});
 
-	
+
 
 
 

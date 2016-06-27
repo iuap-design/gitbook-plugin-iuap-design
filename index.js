@@ -52,8 +52,6 @@ module.exports = {
               '/fonts/font-awesome/css/font-awesome.css',
               '/css/u.css',
               '/css/u-extend.css'
-              // '/css/tree.css',
-              // '/css/grid.css'
             ];
 
             for(var i = 0, len = linkArray.length; i < len; i++){
@@ -111,7 +109,10 @@ module.exports = {
 
             var jsStr = '';
             var jsLib = 'http://design.yyuap.com/static/';
-            var LibArray = ['knockout/knockout-3.2.0.debug.js'];
+            var LibArray = [
+              'knockout/knockout-3.2.0.debug.js',
+              'scrollbar/jquery.mCustomScrollbar.concat.min.js'
+            ];
 
             for ( var i = 0, len = LibArray.length; i < len; i++ ) {
               jsStr += '<script src="'+ jsLib + LibArray[i] + '"></script>\r\n';
@@ -120,15 +121,12 @@ module.exports = {
             var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
             var scriptArray = [
               '/js/u-polyfill.js',
-              // '/js/u.js'
-              // '/js/u-tree.js',
-              // '/js/u-grid.js'
             ];
 
             for ( var j = 0, len = scriptArray.length; j < len; j++ ) {
               jsStr += '<script src="'+ ctx + scriptArray[j] + '"></script>\r\n';
             }
-            
+
             return footCont + jsStr;
           }
         }
