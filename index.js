@@ -25,7 +25,7 @@ module.exports = {
            * head 内加载的资源
            * @param  {[type]} current [description]
            * @return {[type]}         [description]
-           */
+          //  */
           "head:end": function(current) {
 
             var pathStr = '';
@@ -43,7 +43,7 @@ module.exports = {
 
             for(var i = 0, len = pathArray.length; i < len; i++){
               if ( /\.css$/.test(pathArray[i]) ) {
-                pathStr + = '<link rel="stylesheet" href="'
+                pathStr += '<link rel="stylesheet" href="'
                   + ctx + pathArray[i] + '">\r\n';
               } else if ( /\.js$/.test(pathArray[i]) ) {
                 pathStr += '<script src="' + ctx + pathArray[i] + '"></script>\r\n';

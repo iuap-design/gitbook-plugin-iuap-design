@@ -13,51 +13,50 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 				 * @return {[type]} [description]
 				 */
 	    	init: function() {
-					this.DOMHandler();
+				this.DOMHandler();
 
-					this.mobileNav();
-		   		window.onresize = this.mobileNav;
+				this.mobileNav();
+				window.onresize = this.mobileNav;
 
-					this.navControl();
-	    		this.buildTag();
+				this.navControl();
+				this.buildTag();
 
-					this.highlight();
+				this.highlight();
 	    	},
 
-				/**
-				 * 获取DOM元素
-				 * @type {Object}
-				 */
-				DOM: {
-					"$body": $('body'),
-					"$book": $('.book'),	// 文档左侧目录
-					"$summary": $('.book-summary'),
-					"$bookBody": $('.book-body'),	// 文档右侧主体
-					""
+			/**
+			 * 获取DOM元素
+			 * @type {Object}
+			 */
+			DOM: {
+				"$body": $('body'),
+				"$book": $('.book'),	// 文档左侧目录
+				"$summary": $('.book-summary'),
+				"$bookBody": $('.book-body')	// 文档右侧主体
 
-				},
+			},
 
-				DOMHandler: function() {
-					var DOM = this.DOM;
+			DOMHandler: function() {
+				var DOM = this.DOM;
 
-					var $container = $('<div class="container"></div>');
-					var $containerDiv = $('<div class="container-div"></div>');
+				var $container = $('<div class="container"></div>');
+				var $containerDiv = $('<div class="container-div"></div>');
 
-					DOM.$book.append( $container );
+				DOM.$book.append( $container );
 
-					$container.append( $containerDiv );
-					$containerDiv.append( DOM.$summary );
-					$containerDiv.append( DOM.$bookBody );
+				$container.append( $containerDiv );
+				$containerDiv.append( DOM.$summary );
+				$containerDiv.append( DOM.$bookBody );
 
-					this.leftDirChange();
+				this.leftDirChange();
 
-					// 将超链接放到page-wrapper的最后
-					var $pageWrapper = $('.page-wrapper');
-					var $prevA = $('.navigation-prev', DOM.$bookBody );
-					var $nextA = $('.navigation-next', DOM.$bookBody );
+				// 将超链接放到page-wrapper的最后
+				var $pageWrapper = $('.page-wrapper');
+				var $prevA = $('.navigation-prev', DOM.$bookBody );
+				var $nextA = $('.navigation-next', DOM.$bookBody );
 
-					$pageWrapper.append( $prevA );
-					$pageWrapper.append( $nextA );
+				$pageWrapper.append( $prevA );
+				$pageWrapper.append( $nextA );
 
 			    var $html = $('html');
 			    $html.css('font-size','62.5%');
@@ -112,7 +111,7 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 					$dividerLi.remove();
 					$dividerLiNext.remove();
 
-					var $summaryAB = $('a b',$summary);
+					var $summaryAB = $('a b',DOM.$summary);
 
 					// 去掉目录的编号
 					$summaryAB.remove();
