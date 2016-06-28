@@ -1,4 +1,4 @@
-require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
+require( [ 'gitbook' ], function ( gitbook ) {
 
 	gitbook.events.bind('start', function () { });
 
