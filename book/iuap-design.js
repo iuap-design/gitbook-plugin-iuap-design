@@ -181,7 +181,7 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 	    		document.body.appendChild(jsTag);
 
 	    		for(var j=0, cssLen = cssCode.length; j<cssLen; j++ ) {
-	    			cssTag.innerHTML = cssCode[j].textContent;
+	    			cssTag.innerHTML += cssCode[j].textContent;
 	    		}
 	    		document.head.appendChild(cssTag);
 	    	}
