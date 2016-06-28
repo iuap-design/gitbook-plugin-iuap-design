@@ -66,6 +66,8 @@ html{
 }
 
 .example-content{
+    position: relative;
+    overflow: hidden;
     padding: 10px;
     background: #fff;
     border: 1px solid #ddd;
@@ -163,10 +165,6 @@ body{
  .book .book-body .page-wrapper .page-inner section.normal .u-menu{
     padding: 8px 0;
     margin: 0px;
-}
-
-.example-content{
-    position: relative;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .u-pagination > .active > a,  .book .book-body .page-wrapper .page-inner section.normal .u-pagination > .active >  span, .book .book-body .page-wrapper .page-inner section.normal .u-pagination > .active  > a:hover,.book .book-body .page-wrapper .page-inner section.normal  .u-pagination >  .active > span:hover,.book .book-body .page-wrapper .page-inner section.normal .u- pagination > .active > a:focus,.book .book-body .page-wrapper .page-inner section.normal  .u-pagination > .active > span:focus {
