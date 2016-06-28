@@ -3,24 +3,12 @@ var _ = require('underscore');
 var fs = require('fs');
 var path = require('path');
 
-var insertAnchors = function(section) {
-  // 文档主体部分html对应的section内容再次修改，可直接改变生成的html，其他部分的修改由iuap-design.js处理
-  // 添加引用的js和css
-    // section.content = $.html();
-    section.content = section.content.replace(/div class="jstag"/g,'script')
-};
-
-
 module.exports = {
     book: {
         assets: ".",
     },
     hooks: {
-        "page": function (page) { // before html generation
-            // _.forEach(page.sections, insertAnchors);
-            // console.log(page.sections[0].content);
-            // page.sections[0].content = page.sections[0].content.replace(/div class="jstag"/g,'script');
-
+        "page": function (page) {
             return page;
         }
     },
@@ -40,31 +28,29 @@ module.exports = {
            */
           "head:end": function(current) {
 
-            var cssStr = '';
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
-            var lightPath = "http://design.yyuap.com/static/highlight/styles/atelier-plateau-light.css";
-            var hightlightPath = "http://design.yyuap.com/static/highlight/highlight.min.js";
-            var jqueryPath = "http://design.yyuap.com/static/jquery/jquery-1.9.1.min.js"
-            var ujsPath = "http://design.yyuap.com/static/uui-original/1.0.3/js/u.js"
+            var pathStr = '';
+            var ctx = 'http://design.yyuap.com/static/';
 
-            // CSS Path Array
-            var linkArray=[
-              '/fonts/font-awesome/css/font-awesome.css',
-              '/css/u.css',
-              '/css/u-extend.css'
+            // Path Array
+            var pathArray=[
+              'uui-original/1.0.3/fonts/font-awesome/css/font-awesome.css',
+              'uui-original/1.0.3/css/u.css',
+              'uui-original/1.0.3/css/u-extend.css',
+              'highlight/styles/atelier-plateau-light.css',
+              'scrollbar/jquery.mCustomScrollbar.css',
+              'jquery/jquery-1.9.1.min.js'
             ];
 
-            for(var i = 0, len = linkArray.length; i < len; i++){
-              cssStr += '<link rel="stylesheet" href="'
-                + ctx + linkArray[i] + '">\r\n';
+            for(var i = 0, len = pathArray.length; i < len; i++){
+              if ( /\.css$/.test(pathArray[i]) ) {
+                pathStr + = '<link rel="stylesheet" href="'
+                  + ctx + pathArray[i] + '">\r\n';
+              } else if ( /\.js$/.test(pathArray[i]) ) {
+                pathStr += '<script src="' + ctx + pathArray[i] + '"></script>\r\n';
+              }
             }
 
-            cssStr += '<link rel="stylesheet" href="' + lightPath + '">\r\n';
-            cssStr += '<script src="' + jqueryPath + '"></script>\r\n';
-            cssStr += '<script src="' + hightlightPath + '"></script>\r\n';
-            cssStr += '<script src="' + ujsPath + '"></script>\r\n';
-
-            return cssStr;
+            return pathStr;
           },
 
           /**
@@ -73,10 +59,8 @@ module.exports = {
            * @return {[type]}         [description]
            */
           "body:start": function(current) {
-            var title = this.options.pluginsConfig['iuap-design']['title']
-              || "UI 组件";
-            var desc = this.options.pluginsConfig['iuap-design']['desc']
-              || "简单易用，轻量快捷，为移动端服务的前端框架";
+            var title = this.options.pluginsConfig['iuap-design']['title'] || "";
+            var desc = this.options.pluginsConfig['iuap-design']['desc'] || "";
 
             var headPath = path.join('../../dist/pages/common/','header.html');
             var headCont = fs.readFileSync(headPath, {encoding: "utf-8"});
@@ -104,27 +88,22 @@ module.exports = {
            */
           "body:end": function(current) {
 
+            var jsStr = '';
+            var ctx = 'http://design.yyuap.com/static/';
+
             var footPath = path.join('../../dist/pages/common/','footer.html');
             var footCont = fs.readFileSync(footPath, {encoding: "utf-8"});
 
-            var jsStr = '';
-            var jsLib = 'http://design.yyuap.com/static/';
             var LibArray = [
               'knockout/knockout-3.2.0.debug.js',
-              'scrollbar/jquery.mCustomScrollbar.concat.min.js'
+              'scrollbar/jquery.mCustomScrollbar.concat.min.js',
+              'highlight/highlight.min.js',
+              'uui-original/1.0.3/js/u.js',
+              'uui-original/1.0.3/js/u-polyfill.js',
             ];
 
             for ( var i = 0, len = LibArray.length; i < len; i++ ) {
-              jsStr += '<script src="'+ jsLib + LibArray[i] + '"></script>\r\n';
-            }
-
-            var ctx = 'http://design.yyuap.com/static/uui-original/1.0.3';
-            var scriptArray = [
-              '/js/u-polyfill.js',
-            ];
-
-            for ( var j = 0, len = scriptArray.length; j < len; j++ ) {
-              jsStr += '<script src="'+ ctx + scriptArray[j] + '"></script>\r\n';
+              jsStr += '<script src="'+ ctx + LibArray[i] + '"></script>\r\n';
             }
 
             return footCont + jsStr;
