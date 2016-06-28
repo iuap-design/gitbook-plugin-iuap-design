@@ -67,11 +67,19 @@ html{
 
 .example-content{
     position: relative;
-    overflow: hidden;
     padding: 10px;
     background: #fff;
     border: 1px solid #ddd;
     border-bottom: 0px;
+}
+
+.example-content:after{
+    display:block;
+    content:" "; 
+    height:0;
+    clear:both;
+    overflow:hidden;
+    visibility:hidden;
 }
 
 /*wd*/
