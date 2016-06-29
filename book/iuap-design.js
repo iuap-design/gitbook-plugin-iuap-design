@@ -50,7 +50,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				$containerDiv.append( DOM.$summary );
 				$containerDiv.append( DOM.$bookBody );
 
-				this.leftDirChange();
+				/*this.leftDirChange();*/
 
 				// 将超链接放到page-wrapper的最后
 				var $pageWrapper = $('.page-wrapper');
@@ -64,34 +64,39 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    $html.css('font-size','62.5%');
 
 			    $('body').css('display','block');
-
-			    function bodyScrollFun(){
-			    	var st = document.body.scrollTop || document.documentElement.scrollTop;
-			    	var t = 215 - st;
-			    	var t1 = 240 - st;
-
-						if ( t > 0 ) t = 0;
-
-						$('.book-summary').css('top', -1 * t + 'px');
-
-						if ( t1 < 80 ) t1 = 30
-
-						$('#anchors-navbar').css('top', t1 + 'px');
-			    }
-
-			    function bodyScroll(){
-			    	document.body.onscroll = bodyScrollFun;
-			    }
-
 			    document.body.scrollTop = 0;
-			    setInterval(bodyScroll,100)
-			    bodyScrollFun();
+
+			    //menu scroll
+			    function menuScroll(){
+				    document.body.onscroll = function(){
+				    	var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
+				    	var contain = document.querySelectorAll('.book .container')[0];
+				    	// console.log('offleft' + contain.offsetLeft);
+				    	// console.log('getClient' + contain.getBoundingClientRect().left);
+				    	var leftDis = contain.getBoundingClientRect().left;
+				    	
+				    	if(bodyht >= 227) {
+				    		$('.book-summary').addClass('fix').css('left',leftDis + 'px');
+				    	} else {
+				    		$('.book-summary').removeClass('fix');
+				    	}
+
+				    	var t = 215 - bodyht;
+			    		var t1 = 240 - bodyht;
+			    		if ( t1 < 80 ) t1 = 30;
+			    		$('#anchors-navbar').css('top', t1 + 'px');
+
+				    }	
+			    }
+			    setInterval(menuScroll, 1);
+
+			    
 
 			    var oH = document.body.offsetHeight;
 			    var h = parseInt(oH) - 80;
 
-			    DOM.$book.css('min-height',parseInt(oH) - 60 + 'px');
-			    $containerDiv.css('min-height',parseInt(oH) - 120 + 'px');
+			    /*DOM.$book.css('min-height',parseInt(oH) - 60 + 'px');
+			    $containerDiv.css('min-height',parseInt(oH) - 120 + 'px');*/
 
 				},
 
@@ -171,31 +176,31 @@ require( [ 'gitbook' ], function ( gitbook ) {
 	    	 * 创建<style>,<script>标签
 	    	 * @return {[type]} [description]
 	    	 */
-	    	buildTag: function() {
-	    		var jsCode = document.querySelectorAll('.jstag');
-	    		var cssCode = document.querySelectorAll('.csstag');
-	    		var jsTag = document.createElement('script');
-	    		var cssTag = document.createElement('style');
+		    	buildTag: function() {
+		    		var jsCode = document.querySelectorAll('.jstag');
+		    		var cssCode = document.querySelectorAll('.csstag');
+		    		var jsTag = document.createElement('script');
+		    		var cssTag = document.createElement('style');
 
-	    		for(var i=0, jsLen = jsCode.length; i<jsLen; i++) {
-	    			jsTag.innerHTML += jsCode[i].textContent;
-	    		}
-	    		document.body.appendChild(jsTag);
+		    		for(var i=0, jsLen = jsCode.length; i<jsLen; i++) {
+		    			jsTag.innerHTML += jsCode[i].textContent;
+		    		}
+		    		document.body.appendChild(jsTag);
 
-	    		for(var j=0, cssLen = cssCode.length; j<cssLen; j++ ) {
-	    			cssTag.innerHTML += cssCode[j].textContent;
-	    		}
-	    		document.head.appendChild(cssTag);
-	    	}
-	    	// scrollScript: function() {
-	    	// 	var scrollSrc= document.createElement('script');
-      //   		scrollSrc.src = 'http://design.yyuap.com/static/scrollbar/jquery.mCustomScrollbar.concat.min.js';
-      //   		$('body').append(scrollSrc);
-      //   		var testJs = document.createElement('script');
-      //   		testJs.innerHTML = 'console.log("test")';
-      //   		$('body').append(testJs)
-	    	// }
-	    }
+		    		for(var j=0, cssLen = cssCode.length; j<cssLen; j++ ) {
+		    			cssTag.innerHTML += cssCode[j].textContent;
+		    		}
+		    		document.head.appendChild(cssTag);
+		    	}
+		    	// scrollScript: function() {
+		    	// 	var scrollSrc= document.createElement('script');
+	      //   		scrollSrc.src = 'http://design.yyuap.com/static/scrollbar/jquery.mCustomScrollbar.concat.min.js';
+	      //   		$('body').append(scrollSrc);
+	      //   		var testJs = document.createElement('script');
+	      //   		testJs.innerHTML = 'console.log("test")';
+	      //   		$('body').append(testJs)
+		    	// }
+		    }
 
 	    uDesign.init();
 	});

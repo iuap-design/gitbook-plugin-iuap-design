@@ -111,7 +111,20 @@ module.exports = {
           },
 
           "body:add": function (argument) {
-            return '<script> $(".book-summary").mCustomScrollbar();hljs.initHighlightingOnLoad();</script>';
+            
+            var scriptStr = ''
+            var codeStr = [
+              // '$(".book-summary").mCustomScrollbar();',
+              'hljs.initHighlightingOnLoad();'
+            ]
+
+            scriptStr += '<script>';            
+            for( var i=0, codeLen = codeStr.length; i < codeLen; i++ ) {
+              scriptStr += '\r\n' + codeStr[i];
+            }
+            scriptStr += '</script>';
+
+            return scriptStr;
           }
         }
     }
