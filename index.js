@@ -114,7 +114,7 @@ module.exports = {
             
             var scriptStr = ''
             var codeStr = [
-              // '$(".book-summary").mCustomScrollbar();',
+              '$(".book-summary").mCustomScrollbar();',
               'hljs.initHighlightingOnLoad();'
             ]
 
