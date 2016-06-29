@@ -21,7 +21,9 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 				this.navControl();
 				this.buildTag();
 
+				// this.addScript();
 				this.highlight();
+
 	    	},
 
 			/**
@@ -124,7 +126,7 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 				 * @return {[type]} [description]
 				 */
 				highlight: function() {
-					hljs.initHighlightingOnLoad();
+					
 				},
 
 				/**
@@ -185,6 +187,14 @@ require( [ 'gitbook', 'jQuery', 'lodash' ], function ( gitbook, $, _ ) {
 	    		}
 	    		document.head.appendChild(cssTag);
 	    	}
+	    	// scrollScript: function() {
+	    	// 	var scrollSrc= document.createElement('script');
+      //   		scrollSrc.src = 'http://design.yyuap.com/static/scrollbar/jquery.mCustomScrollbar.concat.min.js';
+      //   		$('body').append(scrollSrc);
+      //   		var testJs = document.createElement('script');
+      //   		testJs.innerHTML = 'console.log("test")';
+      //   		$('body').append(testJs)
+	    	// }
 	    }
 
 	    uDesign.init();

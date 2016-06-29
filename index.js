@@ -38,7 +38,8 @@ module.exports = {
               'uui-original/1.0.3/css/u-extend.css',
               'highlight/styles/atelier-plateau-light.css',
               'scrollbar/jquery.mCustomScrollbar.css',
-              'jquery/jquery-1.9.1.min.js'
+              'jquery/jquery-1.9.1.min.js',
+              'uui-original/1.0.3/js/u.js'
             ];
 
             for(var i = 0, len = pathArray.length; i < len; i++){
@@ -98,7 +99,6 @@ module.exports = {
               'knockout/knockout-3.2.0.debug.js',
               'scrollbar/jquery.mCustomScrollbar.concat.min.js',
               'highlight/highlight.min.js',
-              'uui-original/1.0.3/js/u.js',
               'uui-original/1.0.3/js/u-polyfill.js',
             ];
 
@@ -107,6 +107,10 @@ module.exports = {
             }
 
             return footCont + jsStr;
+          },
+
+          "body:add": function (argument) {
+            return '<script> $(".book-summary").mCustomScrollbar();hljs.initHighlightingOnLoad();</script>';
           }
         }
     }

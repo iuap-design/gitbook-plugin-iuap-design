@@ -22,8 +22,13 @@
     <body>
         {{ htmlSnippet("body:start")|default("", true)|safe }}
         {% block content %}{% endblock %}
-		{{ htmlSnippet("body:end")|default("", true)|safe }}
+
+		
+        
         {% block javascript %}{% endblock %}
+        {{ htmlSnippet("body:end")|default("", true)|safe }}
+        {{ htmlSnippet("body:add")|default("", true)|safe }}
+        {{ htmlSnippet("html:end")|default("", true)|safe }}
     </body>
-    {{ htmlSnippet("html:end")|default("", true)|safe }}
+    
 </html>
