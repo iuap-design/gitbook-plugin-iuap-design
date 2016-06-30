@@ -40,6 +40,7 @@ module.exports = {
               'scrollbar/jquery.mCustomScrollbar.css',
               'nanoscroller/nanoscroller.css',
               'jquery/jquery-1.9.1.min.js',
+              'raty/rating.js',
               'uui-original/1.0.3/js/u.js'
             ];
 
@@ -82,9 +83,8 @@ module.exports = {
 
             return headCont + bannerHTML;
           },
-
           /**
-           * body 尾部内容
+           * body 尾部内容，gitbook插件之后加载
            * @param  {[type]} current [description]
            * @return {[type]}         [description]
            */
@@ -99,7 +99,6 @@ module.exports = {
             var LibArray = [
               'knockout/knockout-3.2.0.debug.js',
               'scrollbar/jquery.mCustomScrollbar.concat.min.js',
-              // 'raty/rating.js',
               'nanoscroller/jquery.nanoscroller.js',
               'highlight/highlight.min.js',
               'uui-original/1.0.3/js/u-polyfill.js',
@@ -111,7 +110,11 @@ module.exports = {
 
             return footCont + jsStr;
           },
-
+          /**
+           * body 尾部后添加
+           * @param  {[type]} argument [description]
+           * @return {[type]}          [description]
+           */
           "body:add": function (argument) {
             
             var scriptStr = ''
