@@ -38,6 +38,7 @@ module.exports = {
               'uui-original/1.0.3/css/u-extend.css',
               'highlight/styles/atelier-plateau-light.css',
               'scrollbar/jquery.mCustomScrollbar.css',
+              'nanoscroller/nanoscroller.css',
               'jquery/jquery-1.9.1.min.js',
               'uui-original/1.0.3/js/u.js'
             ];
@@ -98,7 +99,8 @@ module.exports = {
             var LibArray = [
               'knockout/knockout-3.2.0.debug.js',
               'scrollbar/jquery.mCustomScrollbar.concat.min.js',
-              'raty/rating.js',
+              // 'raty/rating.js',
+              'nanoscroller/jquery.nanoscroller.js'
               'highlight/highlight.min.js',
               'uui-original/1.0.3/js/u-polyfill.js',
             ];
@@ -114,7 +116,8 @@ module.exports = {
             
             var scriptStr = ''
             var codeStr = [
-              '$(".book-summary").mCustomScrollbar();',
+              // '$(".book-summary").mCustomScrollbar({scrollbarPosition:"outside"});',
+              '$(".nano").nanoScroller();',
               'hljs.initHighlightingOnLoad();'
             ]
 

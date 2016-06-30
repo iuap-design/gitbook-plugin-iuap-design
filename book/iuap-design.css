@@ -2,8 +2,9 @@
     position:static;
     float:left;
     width:240px;
+    /*height:500px;*/
     border-right: 1px solid #e3e3e3;
-    margin-top: 30px;
+    padding-top: 30px;
     overflow: auto;
     background: #fff;
     -webkit-transition: width 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
@@ -12,14 +13,14 @@
     transition: width 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
 
 }
-.book .book-summary:after{
+/*.book .book-summary:after{
     display: block;
     content: " ";
     height: 0;
     clear: both;
     overflow: hidden;
     visibility: hidden;
-}
+}*/
 .book .book-summary.fix{
     position:fixed;
 }
@@ -30,7 +31,9 @@
 }
 
 .book .book-summary ul.summary{
-    position:relative;
+    /*临时调*/
+    /*position:relative;*/
+    position:absolute;
 }
 
 .container-div{
@@ -417,11 +420,11 @@ header.navbar .toolbar .action-btn{
         display: none;
     }
     .book.with-summary .book-body{
-        -webkit-transform: translate(calc(240px),0); 
-        -moz-transform: translate(calc(240px),0);
-        -ms-transform: translate(calc(240px),0);
-        -o-transform: translate(calc(240px),0);
-        transform: translate(calc(240px),0);
+        -webkit-transform: translate(calc(0px),0); 
+        -moz-transform: translate(calc(0px),0);
+        -ms-transform: translate(calc(0px),0);
+        -o-transform: translate(calc(0px),0);
+        transform: translate(calc(0px),0);
         -webkit-transition: -webkit-transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
         -moz-transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
         -o-transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;

@@ -21,8 +21,8 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				this.navControl();
 				this.buildTag();
 
-				// this.addScript();
 				this.highlight();
+				this.addClass();
 
 	    	},
 
@@ -95,6 +95,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    var oH = document.body.offsetHeight;
 			    var h = parseInt(oH) - 80;
 
+			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 100 + 'px');
 			    /*DOM.$book.css('min-height',parseInt(oH) - 60 + 'px');
 			    $containerDiv.css('min-height',parseInt(oH) - 120 + 'px');*/
 
@@ -143,7 +144,10 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					var bodyWidth = document.body.offsetWidth;
 					var eleBook = document.querySelectorAll('.book')[0];
 					if(bodyWidth<=600) {
-						eleBook.classList ? eleBook.classList.remove('with-summary') : eleBook.className.replace(new RegExp('(^|\\b)' + 'with-summary'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+						if (eleBook.classList)
+							eleBook.classList.add('with-summary');
+						else
+							eleBook.className += ' ' + 'with-summary';
 					}
 				},
 
@@ -191,15 +195,12 @@ require( [ 'gitbook' ], function ( gitbook ) {
 		    			cssTag.innerHTML += cssCode[j].textContent;
 		    		}
 		    		document.head.appendChild(cssTag);
+		    	},
+		    	addClass: function() {
+		    		$('.book-summary > nav').addClass('nano');
+		    		$('.summary').addClass('nano-content');
 		    	}
-		    	// scrollScript: function() {
-		    	// 	var scrollSrc= document.createElement('script');
-	      //   		scrollSrc.src = 'http://design.yyuap.com/static/scrollbar/jquery.mCustomScrollbar.concat.min.js';
-	      //   		$('body').append(scrollSrc);
-	      //   		var testJs = document.createElement('script');
-	      //   		testJs.innerHTML = 'console.log("test")';
-	      //   		$('body').append(testJs)
-		    	// }
+		    	
 		    }
 
 	    uDesign.init();
