@@ -23,6 +23,12 @@
     "underscore": "*"
   },
   "author": "liuyuekai,guoyongfeng",
+  "maintainers": [
+    {
+      "email": "guoyff@yonyou.com",
+      "name": "GuoYongfeng"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iuap-design/gitbook-plugin-iuap-design/issues"

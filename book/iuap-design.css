@@ -96,7 +96,7 @@ html{
 
 .example-content:after{
     display:block;
-    content:" "; 
+    content:" ";
     height:0;
     clear:both;
     overflow:hidden;
@@ -122,7 +122,7 @@ html{
 
 body{
     display: none;
-} 
+}
 
 
 
@@ -421,7 +421,7 @@ header.navbar .toolbar .action-btn{
     }
     .book.with-summary .book-body{
         transform:none;
-        /*-webkit-transform: translate(calc(240px),0); 
+        /*-webkit-transform: translate(calc(240px),0);
         -moz-transform: translate(calc(240px),0);
         -ms-transform: translate(calc(240px),0);
         -o-transform: translate(calc(240px),0);
@@ -447,9 +447,3 @@ header.navbar .toolbar .action-btn{
     }
 
 }
-
-
-
-
-
-
