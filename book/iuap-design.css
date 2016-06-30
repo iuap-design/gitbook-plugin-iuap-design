@@ -1,9 +1,8 @@
 .book .book-summary{
     position:static;
     float:left;
-    width:240px;
-    /*height:500px;*/
-    border-right: 1px solid #e3e3e3;
+    width:0px;
+    border-right: 0px;
     padding-top: 30px;
     overflow: auto;
     background: #fff;
@@ -25,8 +24,8 @@
     position:fixed;
 }
 .book.with-summary .book-summary, .book.with-summary .book-summary.fix{
-    width:0;
-    border-right:0;
+    width:240px;
+    border-right: 1px solid #e3e3e3;
 
 }
 
@@ -114,7 +113,7 @@ html{
 .book.with-summary .book-body{
     /*position: relative;*/
     position:static;
-    padding-left:0;
+    padding-left:240px;
 }
 .book .book-summary .book-search{
     display: none;
@@ -152,7 +151,7 @@ body{
 }
 
 .book .book-body{
-    padding-left:240px;
+    padding-left:0px;
     -webkit-transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
     -moz-transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
     -o-transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
@@ -420,15 +419,16 @@ header.navbar .toolbar .action-btn{
         display: none;
     }
     .book.with-summary .book-body{
-        -webkit-transform: translate(calc(0px),0); 
-        -moz-transform: translate(calc(0px),0);
-        -ms-transform: translate(calc(0px),0);
-        -o-transform: translate(calc(0px),0);
-        transform: translate(calc(0px),0);
-        -webkit-transition: -webkit-transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
-        -moz-transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
-        -o-transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
-        transition: transform 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        transform:none;
+        /*-webkit-transform: translate(calc(240px),0); 
+        -moz-transform: translate(calc(240px),0);
+        -ms-transform: translate(calc(240px),0);
+        -o-transform: translate(calc(240px),0);
+        transform: translate(calc(240px),0);*/
+        -webkit-transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        -moz-transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        -o-transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
+        transition: padding-left 400ms cubic-bezier(0.785, 0.135, 0.150, 0.860) ,visibility 400ms;
     }
 
     /*mobile content*/

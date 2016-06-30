@@ -22,6 +22,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				this.buildTag();
 
 				this.addClass();
+				this.changeLink();
 
 	    	},
 
@@ -131,10 +132,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					var bodyWidth = document.body.offsetWidth;
 					var eleBook = document.querySelectorAll('.book')[0];
 					if(bodyWidth<=600) {
-						if (eleBook.classList)
-							eleBook.classList.add('with-summary');
-						else
-							eleBook.className += ' ' + 'with-summary';
+						eleBook.classList ? eleBook.classList.remove('with-summary') : eleBook.className.replace(new RegExp('(^|\\b)' + 'with-summary'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 					}
 				},
 
@@ -186,6 +184,19 @@ require( [ 'gitbook' ], function ( gitbook ) {
 		    	addClass: function() {
 		    		$('.book-summary > nav').addClass('nano');
 		    		$('.summary').addClass('nano-content');
+		    	},
+		    	/**
+		    	 * 用于解决gitbook生成的目录没有跳转刷新功能，导致页面加载的插件无法执行
+		    	 * @return {[type]} [description]
+		    	 */
+		    	changeLink: function() {
+	                $('.chapter a').on('click', function(){
+	                    var aLink = $(this).attr('href').replace(/^\./,'');
+	                    var localHref = window.location.href.replace(/\/[a-z]+\.html$/g, aLink);
+	                    console.log(localHref);
+	                    window.location.href = localHref;
+	                    return false;
+	                })		    		
 		    	}
 		    	
 		    }
