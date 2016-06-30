@@ -100,7 +100,7 @@ module.exports = {
               'knockout/knockout-3.2.0.debug.js',
               'scrollbar/jquery.mCustomScrollbar.concat.min.js',
               // 'raty/rating.js',
-              'nanoscroller/jquery.nanoscroller.js'
+              'nanoscroller/jquery.nanoscroller.js',
               'highlight/highlight.min.js',
               'uui-original/1.0.3/js/u-polyfill.js',
             ];
