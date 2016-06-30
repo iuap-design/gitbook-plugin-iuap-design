@@ -69,14 +69,12 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					    document.body.onscroll = function(){
 					    	var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
 					    	var contain = document.querySelectorAll('.book .container')[0];
-					    	// console.log('offleft' + contain.offsetLeft);
-					    	// console.log('getClient' + contain.getBoundingClientRect().left);
 					    	var leftDis = contain.getBoundingClientRect().left;
 
 					    	if(bodyht >= 227) {
-					    		$('.book-summary').addClass('fix').css('left',leftDis + 'px');
+					    		$('.book-summary').css('left',leftDis + 'px');
 					    	} else {
-					    		$('.book-summary').removeClass('fix');
+					    		// $('.book-summary').removeClass('fix');
 					    	}
 
 					    	var t = 215 - bodyht;
