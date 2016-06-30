@@ -25,7 +25,7 @@ module.exports = {
            * head 内加载的资源
            * @param  {[type]} current [description]
            * @return {[type]}         [description]
-          //  */
+           */
           "head:end": function(current) {
 
             var pathStr = '';
@@ -116,7 +116,6 @@ module.exports = {
             
             var scriptStr = ''
             var codeStr = [
-              // '$(".book-summary").mCustomScrollbar({scrollbarPosition:"outside"});',
               '$(".nano").nanoScroller();',
               'hljs.initHighlightingOnLoad();'
             ]

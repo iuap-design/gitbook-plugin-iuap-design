@@ -8,10 +8,10 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			 * @type {Object}
 			 */
 	    var uDesign = {
-				/**
-				 * 初始化
-				 * @return {[type]} [description]
-				 */
+			/**
+			 * 初始化
+			 * @return {[type]} [description]
+			 */
 	    	init: function() {
 				this.DOMHandler();
 
@@ -21,7 +21,6 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				this.navControl();
 				this.buildTag();
 
-				this.highlight();
 				this.addClass();
 
 	    	},
@@ -50,7 +49,6 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				$containerDiv.append( DOM.$summary );
 				$containerDiv.append( DOM.$bookBody );
 
-				/*this.leftDirChange();*/
 
 				// 将超链接放到page-wrapper的最后
 				var $pageWrapper = $('.page-wrapper');
@@ -66,7 +64,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    $('body').css('display','block');
 			    document.body.scrollTop = 0;
 
-			    //menu scroll
+			    // Menu scroll
 			    function menuScroll(){
 				    document.body.onscroll = function(){
 				    	var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
@@ -96,8 +94,6 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    var h = parseInt(oH) - 80;
 
 			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 100 + 'px');
-			    /*DOM.$book.css('min-height',parseInt(oH) - 60 + 'px');
-			    $containerDiv.css('min-height',parseInt(oH) - 120 + 'px');*/
 
 				},
 
@@ -124,15 +120,6 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					// 去掉目录的编号
 					$summaryAB.remove();
 
-				},
-
-				/**
-				 * 高亮代码
-				 * 需要测试，是否生效
-				 * @return {[type]} [description]
-				 */
-				highlight: function() {
-					
 				},
 
 				/**
@@ -176,10 +163,10 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					});
 				},
 
-	    	/**
-	    	 * 创建<style>,<script>标签
-	    	 * @return {[type]} [description]
-	    	 */
+		    	/**
+		    	 * 创建<style>,<script>标签
+		    	 * @return {[type]} [description]
+		    	 */
 		    	buildTag: function() {
 		    		var jsCode = document.querySelectorAll('.jstag');
 		    		var cssCode = document.querySelectorAll('.csstag');
