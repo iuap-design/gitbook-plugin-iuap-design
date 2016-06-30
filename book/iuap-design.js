@@ -14,7 +14,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			 */
 	    	init: function() {
 				this.DOMHandler();
-
+				this.leftDirChange();
 				this.mobileNav();
 				window.onresize = this.mobileNav;
 
@@ -123,6 +123,10 @@ require( [ 'gitbook' ], function ( gitbook ) {
 
 					// 去掉目录的编号
 					$summaryAB.remove();
+
+					// 设置左侧目录最大高度
+					var browserH = document.documentElement.clientHeight;
+					DOM.$summary.css('max-height', browserH - 80 + 'px');
 
 				},
 

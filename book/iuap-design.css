@@ -26,6 +26,7 @@
 .book.with-summary .book-summary, .book.with-summary .book-summary.fix{
     width:240px;
     border-right: 1px solid #e3e3e3;
+    overflow: hidden;
 
 }
 
