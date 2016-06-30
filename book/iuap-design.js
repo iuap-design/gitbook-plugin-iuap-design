@@ -70,9 +70,12 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				    document.body.onscroll = function(){
 				    	var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
 				    	var contain = document.querySelectorAll('.book .container')[0];
+				    	// console.log(contain.offsetWidth,contain.clientWidth);
 				    	// console.log('offleft' + contain.offsetLeft);
 				    	// console.log('getClient' + contain.getBoundingClientRect().left);
-				    	var leftDis = contain.getBoundingClientRect().left;
+				    	var leftPadding = parseInt(getComputedStyle(contain)['padding-left']);
+				    	var leftBasic = contain.getBoundingClientRect().left;
+				    	var leftDis = leftBasic + leftPadding;
 				    	
 				    	if(bodyht >= 227) {
 				    		$('.book-summary').addClass('fix').css('left',leftDis + 'px');
