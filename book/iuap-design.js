@@ -84,15 +84,19 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				    	}
 
 				    	var t = 215 - bodyht;
-			    		var t1 = 240 - bodyht;
-			    		if ( t1 < 80 ) t1 = 30;
-			    		$('#anchors-navbar').css('top', t1 + 'px');
+			    		var t1 = 257 - bodyht;
+			    		if(bodyht>=227){
+			    			$('#anchors-navbar').css('top', '30px');
+			    		} else {
+			    			$('#anchors-navbar').css('top',t1 +'px');
+			    		}
+			    		
 
-				    }	
+				    }
 			    }
+			    menuScroll();
 			    setInterval(menuScroll, 1);
 
-			    
 
 			    var oH = document.body.offsetHeight;
 			    var h = parseInt(oH) - 80;
@@ -199,7 +203,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 		    	changeLink: function() {
 	                $('.chapter a').on('click', function(){
 	                    var aLink = $(this).attr('href').replace(/^\./,'');
-	                    var localHref = window.location.href.replace(/\/[a-z]+\.html$/g, aLink);
+	                    var localHref = window.location.href.replace(/\/[\w-]+\.html$/g, aLink);
 	                    console.log(localHref);
 	                    window.location.href = localHref;
 	                    return false;

@@ -273,7 +273,7 @@ table.u-table-base.u-table-striped thead tr{
 }
 /*锚点*/
 #anchors-navbar{
-    top: 68px;
+    top: 257px;
 }
 #anchors-navbar:hover{
     background: #fff;
@@ -412,6 +412,11 @@ header.navbar .toolbar .action-btn{
 .copyright p{
     padding-top:20px;
     margin-bottom:20px;
+}
+
+/*调整内页右侧导航Bug*/
+.nav-body .mCSB_inside > .mCSB_container{
+    margin-right:0px;
 }
 
 /*mobile style*/
