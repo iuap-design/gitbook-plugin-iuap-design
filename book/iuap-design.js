@@ -203,9 +203,8 @@ require( [ 'gitbook' ], function ( gitbook ) {
 		    	changeLink: function() {
 	                $('.chapter a').on('click', function(){
 	                    var aLink = $(this).attr('href').replace(/^\./,'');
-	                    var localHref = window.location.href.replace(/\/[\w-]+\.html$/g, aLink);
-	                    console.log(localHref);
-	                    window.location.href = localHref;
+	                    var newHref = window.location.href.replace(/\/[\w-]+\.html[#]*[\w-]*[\u4e00-\u9fa5]*$/g, aLink);
+	                    window.location.href = newHref;
 	                    return false;
 	                })		    		
 		    	}
