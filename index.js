@@ -36,6 +36,8 @@ module.exports = {
               'uui-original/1.0.3/fonts/font-awesome/css/font-awesome.css',
               'uui-original/1.0.3/css/u.css',
               'uui-original/1.0.3/css/u-extend.css',
+              'uui-original/1.0.3/css/tree.css',
+              'uui-original/1.0.3/css/grid.css',
               'highlight/styles/atelier-plateau-light.css',
               'scrollbar/jquery.mCustomScrollbar.css',
               'nanoscroller/nanoscroller.css',
@@ -102,6 +104,8 @@ module.exports = {
               'nanoscroller/jquery.nanoscroller.js',
               'highlight/highlight.min.js',
               'uui-original/1.0.3/js/u-polyfill.js',
+              'uui-original/1.0.3/js/u-tree.js',
+              'uui-original/1.0.3/js/u-grid.js'
             ];
 
             for ( var i = 0, len = LibArray.length; i < len; i++ ) {

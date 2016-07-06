@@ -55,3 +55,8 @@
 
 - 调整左侧内容高度，避免部分内容不能正常显示
 
+2016-07-06 v1.2.23
+
+- 模板增加u.css,避免tooltip显示bug
+- 增加u-grid.js,u-trree.js,grid.css,tree.css
+
