@@ -101,7 +101,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    var oH = document.body.offsetHeight;
 			    var h = parseInt(oH) - 80;
 
-			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 100 + 'px');
+			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 125 + 'px');
 
 				},
 
@@ -128,9 +128,9 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					// 去掉目录的编号
 					$summaryAB.remove();
 
-					// 设置左侧目录最大高度
+					// 设置左侧目录最大高度 : browser height - footerheight - leftmenuMargintop
 					var browserH = document.documentElement.clientHeight;
-					DOM.$summary.css('max-height', browserH - 100 + 'px');
+					DOM.$summary.css('max-height', browserH - 125 + 'px');
 
 				},
 
