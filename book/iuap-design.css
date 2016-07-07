@@ -418,6 +418,10 @@ header.navbar .logo{
     margin-right:0px;
 }
 
+.book .book-body .page-wrapper .page-inner section.normal .examples-code{
+    clear:both;
+}
+
 /*mobile style*/
 @media screen and (max-width:600px) {
     #anchors-navbar,#goTop{
