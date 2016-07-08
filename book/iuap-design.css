@@ -403,7 +403,7 @@ header.navbar .logo{
 }
 
 .book .book-body .page-wrapper .page-inner section.normal .u-tabs-pill .u-tabs__tab.is-active{
-    color:#fff;
+    color:#fff !important;
     background-color:rgb(63,81,181);
 
 }
