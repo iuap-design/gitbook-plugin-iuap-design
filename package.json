@@ -1,6 +1,6 @@
 {
   "name": "gitbook-plugin-iuap-design",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "description": "gitbook plugin for iuap-design",
   "main": "index.js",
   "engines": {
