@@ -34,7 +34,7 @@ module.exports = {
             // Path Array
             var pathArray=[
               'uui/3.0.6/css/font-awesome.css',
-              'uui/3.0.6/css/u.css',
+              // 'uui/3.0.6/css/u.css',
               // 'uui/3.0.6/u-extend.css',
               'uui/3.0.6/css/tree.css',
               'uui/3.0.6/css/grid.css',
@@ -43,6 +43,7 @@ module.exports = {
               'nanoscroller/nanoscroller.css',
               'jquery/jquery-1.9.1.min.js',
               'raty/rating.js',
+              'knockout/knockout-3.2.0.debug.js',
               'uui/3.0.6/js/u.js'
             ];
 
