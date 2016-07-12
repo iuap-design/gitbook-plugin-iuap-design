@@ -96,6 +96,10 @@ html{
     border-bottom: 0px;
 }
 
+.example-content.ex-hide{
+    display: none;
+}
+
 .example-content:after{
     display:block;
     content:" ";
