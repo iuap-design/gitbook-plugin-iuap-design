@@ -426,6 +426,50 @@ header.navbar .logo{
     clear:both;
 }
 
+/*字体图标*/
+/* 清除浮动 */
+.ks-clear:after, .clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+.ks-clear, .clear {
+  *zoom: 1;
+}
+
+
+.main h1{font-size:36px; color:#333; text-align:left;margin-bottom:30px; border-bottom: 1px solid #eee;}
+
+.helps{margin-top:40px;}
+.helps pre{
+  padding:20px;
+  margin:10px 0;
+  border:solid 1px #e7e1cd;
+  background-color: #fffdef;
+  overflow: auto;
+}
+
+.icon_lists li{
+  float:left;
+  width: 150px;
+  height:210px;
+  text-align: center;
+}
+.icon_lists .icon{
+  font-size: 42px;
+  line-height: 100px;
+  margin: 10px 0;
+  color:#333;
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
+
+}
+.icon_lists .icon:hover{
+  font-size: 100px;
+}
+
 /*mobile style*/
 @media screen and (max-width:600px) {
     #anchors-navbar,#goTop{

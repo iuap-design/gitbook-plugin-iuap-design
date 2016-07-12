@@ -88,3 +88,7 @@
 2016-07-12 v1.3.0
 
 - 修改包裹style,script标签的显示(display:none)
+
+2016-07-12 v1.3.1
+
+- css增加font样式
