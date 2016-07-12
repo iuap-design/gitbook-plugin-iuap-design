@@ -33,18 +33,18 @@ module.exports = {
 
             // Path Array
             var pathArray=[
-              'uui/3.0.6/css/font-awesome.css',
-              // 'uui/3.0.6/css/u.css',
-              // 'uui/3.0.6/u-extend.css',
-              'uui/3.0.6/css/tree.css',
-              'uui/3.0.6/css/grid.css',
+              'uui/latest/css/font-awesome.css',
+              // 'uui/latest/css/u.css',
+              // 'uui/latest/u-extend.css',
+              'uui/latest/css/tree.css',
+              'uui/latest/css/grid.css',
               'highlight/styles/atelier-plateau-light.css',
               'scrollbar/jquery.mCustomScrollbar.css',
               'nanoscroller/nanoscroller.css',
               'jquery/jquery-1.9.1.min.js',
               'raty/rating.js',
               'knockout/knockout-3.2.0.debug.js',
-              'uui/3.0.6/js/u.js'
+              'uui/latest/js/u.js'
             ];
 
             for(var i = 0, len = pathArray.length; i < len; i++){
@@ -104,9 +104,9 @@ module.exports = {
               'scrollbar/jquery.mCustomScrollbar.concat.min.js',
               'nanoscroller/jquery.nanoscroller.js',
               'highlight/highlight.min.js',
-              'uui/3.0.6/js/u-polyfill.js',
-              'uui/3.0.6/js/u-tree.js',
-              'uui/3.0.6/js/u-grid.js'
+              'uui/latest/js/u-polyfill.js',
+              'uui/latest/js/u-tree.js',
+              'uui/latest/js/u-grid.js'
             ];
 
             for ( var i = 0, len = LibArray.length; i < len; i++ ) {
