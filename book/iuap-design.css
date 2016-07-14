@@ -295,6 +295,10 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     list-style-type: disc;
 }
 
+.book .book-body .page-wrapper .page-inner section.normal>ul>li>ul>li{
+    list-style-type: circle;
+}
+
 /*left mobile show*/
 .book .book-header h1{
     display: none;
