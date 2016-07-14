@@ -36,8 +36,8 @@ module.exports = {
               'uui/latest/css/font-awesome.css',
               // 'uui/latest/css/u.css',
               // 'uui/latest/u-extend.css',
-              // 'uui/latest/css/tree.css',
-              // 'uui/latest/css/grid.css',
+              'uui/latest/css/tree.css',
+              'uui/latest/css/grid.css',
               'highlight/styles/atelier-plateau-light.css',
               'scrollbar/jquery.mCustomScrollbar.css',
               'nanoscroller/nanoscroller.css',
@@ -68,7 +68,7 @@ module.exports = {
             var title = this.options.pluginsConfig['iuap-design']['title'] || "";
             var desc = this.options.pluginsConfig['iuap-design']['desc'] || "";
 
-            var headPath = path.join('../../dist/pages/common/','header.html');
+            var headPath = path.join('../../src/common/','header.html');
             var headCont = fs.readFileSync(headPath, {encoding: "utf-8"});
 
             var banner = [
@@ -96,7 +96,7 @@ module.exports = {
             var jsStr = '';
             var ctx = 'http://design.yyuap.com/static/';
 
-            var footPath = path.join('../../dist/pages/common/','footer.html');
+            var footPath = path.join('../../src/common/','footer.html');
             var footCont = fs.readFileSync(footPath, {encoding: "utf-8"});
 
             var LibArray = [
