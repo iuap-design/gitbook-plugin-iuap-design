@@ -334,8 +334,8 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     color: #333;
 }
 .book .book-body .page-wrapper .page-inner section.normal .u-menu li:hover > a{
-        color: #fff;
-        text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 .book .book-body .page-wrapper .page-inner section.normal .u-table-hover tbody tr:hover{
     background: #eee;
@@ -343,12 +343,12 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 .book .book-body .page-wrapper .page-inner section.normal .u-table-striped tbody tr:nth-child(2n+1){
     background: rgba(238,238,238,.3);
 }
-.book .book-body .page-wrapper .page-inner section.normal table thead th :last-child{
+/*.book .book-body .page-wrapper .page-inner section.normal table thead th :last-child{
     text-align: right;
 }
 .book .book-body .page-wrapper .page-inner section.normal table tbody td:last-child{
     text-align: right;
-}
+}*/
 h3.u-panel-title{
     margin:0!important;
 }
