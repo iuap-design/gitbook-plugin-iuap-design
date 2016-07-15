@@ -31,7 +31,13 @@
         {% block content %}{% endblock %}
 
 		
-        
+        <script>
+            if(!history.replaceState) {
+                history.replaceState = function(){
+                    return '';
+                }
+            };
+        </script>
         {% block javascript %}{% endblock %}
         {{ htmlSnippet("body:end")|default("", true)|safe }}
         {{ htmlSnippet("body:add")|default("", true)|safe }}
