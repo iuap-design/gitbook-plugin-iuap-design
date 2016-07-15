@@ -66,6 +66,14 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    document.body.scrollTop = 0;
 
 			    // Menu scroll
+			    
+		    	// HEAD Height
+		    	var header = document.getElementsByTagName('header')[0];
+		    	var banner = document.querySelectorAll('.banner')[0];
+		    	var headerHt = parseFloat(getComputedStyle(header)['height']);
+		    	var bannerHt = parseFloat(getComputedStyle(banner)['height']);
+		    	var headAddHt = headerHt + bannerHt;
+
 			    function menuScroll(){
 				    document.body.onscroll = function(){
 				    	var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
@@ -76,32 +84,31 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				    	var leftPadding = parseInt(getComputedStyle(contain)['padding-left']);
 				    	var leftBasic = contain.getBoundingClientRect().left;
 				    	var leftDis = leftBasic + leftPadding;
-				    	
-				    	if(bodyht >= 227) {
+
+				    	var anchorTop = headAddHt - bodyht + 30;
+
+				    	if(bodyht >= headAddHt) {
 				    		$('.book-summary').addClass('fix').css('left',leftDis + 'px');
+				    		$('#anchors-navbar').css('top', '30px');
 				    	} else {
 				    		$('.book-summary').removeClass('fix');
+				    		$('#anchors-navbar').css('top',anchorTop +'px');
 				    	}
 
-				    	var t = 215 - bodyht;
-			    		var t1 = 257 - bodyht;
-			    		if(bodyht>=227){
-			    			$('#anchors-navbar').css('top', '30px');
-			    		} else {
-			    			$('#anchors-navbar').css('top',t1 +'px');
-			    		}
-			    		
+				    	
 
-				    }
+				    };
 			    }
 			    menuScroll();
 			    setInterval(menuScroll, 1);
 
-
 			    var oH = document.body.offsetHeight;
 			    var h = parseInt(oH) - 80;
 
-			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 155 + 'px');
+			    // 设置左侧目录最大高度 : browser height - footerheight - leftmenuMargintop
+				var browserH = document.documentElement.clientHeight;
+				DOM.$summary.css('height', browserH - 163 + 'px');
+			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 193 + 'px');
 
 				},
 
@@ -118,7 +125,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 
 					// 去掉介绍
 					$('.summary > li').first().remove();
-
+					
 					// 删除下面横线及之后的li
 					$dividerLi.remove();
 					$dividerLiNext.remove();
@@ -127,11 +134,6 @@ require( [ 'gitbook' ], function ( gitbook ) {
 
 					// 去掉目录的编号
 					$summaryAB.remove();
-
-					// 设置左侧目录最大高度 : browser height - footerheight - leftmenuMargintop
-					var browserH = document.documentElement.clientHeight;
-					DOM.$summary.css('height', browserH - 125 + 'px');
-
 				},
 
 				/**
