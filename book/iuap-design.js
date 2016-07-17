@@ -34,8 +34,8 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				"$body": $('body'),
 				"$book": $('.book'),	// 文档左侧目录
 				"$summary": $('.book-summary'),
-				"$bookBody": $('.book-body')	// 文档右侧主体
-
+				"$bookBody": $('.book-body'),	// 文档右侧主体
+				"$bookInner": $('.body-inner')
 			},
 
 			DOMHandler: function() {
@@ -109,7 +109,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				var browserH = document.documentElement.clientHeight;
 				DOM.$summary.css('height', browserH - 163 + 'px');
 			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 193 + 'px');
-
+			    DOM.$bookInner.css('min-height',browserH - 133 + 'px');
 				},
 
 				/**
