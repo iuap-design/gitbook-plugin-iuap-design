@@ -205,10 +205,13 @@ require( [ 'gitbook' ], function ( gitbook ) {
 		    	changeLink: function() {
 	                $('.chapter a').on('click', function(){
 	                    var aLink = $(this).attr('href').replace(/^\./,'');
-	                    var newHref = window.location.href.replace(/\/[\w-]+\.html[#]*[\w-]*[\u4e00-\u9fa5]*$/g, aLink);
+	                    var linkPageIndex = window.location.href.lastIndexOf('/');
+	                    var lastHref = window.location.href.substr(0,linkPageIndex);
+	                    var newHref = window.location.href.substr(0,linkPageIndex) + aLink;
+	                    // var newHref = window.location.href.replace(/\/[\w-]+\.html[#]*[\w-]*[\u4e00-\u9fa5]*$/g, aLink); //firefox没识别
 	                    window.location.href = newHref;
 	                    return false;
-	                })		    		
+	                });
 		    	}
 		    	
 		    }
