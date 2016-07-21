@@ -146,6 +146,7 @@ require( [ 'gitbook' ], function ( gitbook ) {
 					var eleBook = document.querySelectorAll('.book')[0];
 					if(bodyWidth<=600) {
 						eleBook.classList ? eleBook.classList.remove('with-summary') : eleBook.className.replace(new RegExp('(^|\\b)' + 'with-summary'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+						eleBook.classList ? eleBook.classList.remove('with-search') : eleBook.className.replace(new RegExp('(^|\\b)' + 'with-search'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
 					}
 				},
 

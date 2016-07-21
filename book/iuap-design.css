@@ -125,16 +125,26 @@ html{
     position:static;
     padding-left:240px;
 }
-.book .book-summary .book-search{
+/*.book .book-summary .book-search{
     display: none;
+}*/
+.book .book-summary .book-search,.book.with-search .book-summary .book-search{
+    z-index:99;
+    width:240px;
 }
+
+.book.with-search .book-summary .book-search{
+    top:-50px;
+}
+.book.with-summary.with-search .book-summary .book-search{
+    top:0px;
+    border-bottom:1px solid #eee;
+}
+
 
 body{
     display: none;
 }
-
-
-
 
 .banner {
     width: 100%;
