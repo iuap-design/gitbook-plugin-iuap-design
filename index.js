@@ -31,6 +31,13 @@ module.exports = {
             var pathStr = '';
             var ctx = 'http://design.yyuap.com/static/';
 
+            // Polyfill
+            pathStr = '<!--[if lte IE 8]>' +
+              '<script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>\r\n' +
+              '<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>\r\n' +
+              '<script src="http://design.yyuap.com/static/uui/latest/js/u-polyfill.js"></script>\r\n' +
+              '<![endif]-->';
+
             // Path Array
             var pathArray=[
               'uui/latest/css/font-awesome.css',
