@@ -541,3 +541,18 @@ header.navbar .logo{
     }
 
 }
+.book .book-body .page-wrapper .page-inner section.normal .navbar-brand{
+    min-width: 100px;
+    padding-right: 0;
+}
+.book .book-body .page-wrapper .page-inner section.normal .u-navlayout-header a{
+    color: #fff;
+    text-decoration: none;
+}
+.book .book-body .page-wrapper .page-inner section.normal .u-navlayout-header .u-navlayout-toolbar li .u-topic{
+     font-size:20px;
+}
+.book .book-body .page-wrapper .page-inner section.normal .inverse .u-navlayout-header a{
+    color: #000;
+    text-decoration: none;
+}
