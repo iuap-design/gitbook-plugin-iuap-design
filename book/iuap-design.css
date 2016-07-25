@@ -238,6 +238,7 @@ table.u-table-base.u-table-striped thead tr{
     border:none;
 }
 .book .book-body .page-wrapper .page-inner section.normal table th{
+    text-align: left;
     font-weight: 500;
 }
 .book .book-body .page-wrapper .page-inner section.normal table tbody tr:nth-child(2n+1){
