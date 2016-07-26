@@ -602,3 +602,70 @@ header.navbar .logo{
     background-color: #337ab7;
     border-color: #337ab7;
 }
+.book .book-body .page-wrapper .page-inner section.normal .u-gallery-item a{
+    text-decoration: none;
+    color: #000;
+}
+.u-gallery-title {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px !important;
+    display: block;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #555;
+    margin-top: 8px !important;
+    margin-bottom: 3px !important;
+}
+.u-gallery-desc {
+    color: #999;
+    font-size: 12px !important;
+}
+.u-gallery-overlay .u-gallery-item {
+    position: relative;
+}
+.u-gallery-overlay .u-gallery-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #FFF;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+    text-indent: 5px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.u-gallery-overlay .u-gallery-desc {
+    display: none;
+}
+.u-gallery-bordered .u-gallery-item {
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.35);
+    box-shadow: 0 0 3px rgba(0,0,0,.35);
+    padding: 5px;
+}
+.u-gallery-bordered .u-gallery-title {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #555;
+    display: block;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.u-gallery-imgbordered .u-gallery-item img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #FFF !important;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.35) !important;
+    box-shadow: 0 0 3px rgba(0,0,0,.35) !important;
+}
