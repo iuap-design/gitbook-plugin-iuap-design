@@ -560,6 +560,13 @@ header.navbar .logo{
 .book .book-body .page-wrapper .page-inner section.normal .u-menu-item:hover > a{
     color: #262626 !important;
 }
+
+.book .book-body .page-wrapper .page-inner section.normal h4{
+    font-size:1.0em;
+}
+
+
+
 .u-menu-item:hover{
     text-decoration: none;
     background-color: #f5f5f5;
