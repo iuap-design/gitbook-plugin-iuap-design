@@ -348,7 +348,7 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 /*left secondary menu*/
 .book .book-summary ul.summary li span{
     cursor: pointer;
-    padding-left:30px;
+    /*padding-left:30px;*/
     opacity: 1;
     filter:alpha(opacity=100);
 }
@@ -365,6 +365,19 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
     top:10px;
     width:100%;
 }
+
+.book .book-summary ul.summary > li.chapter > a,
+.book .book-summary ul.summary > li.chapter > span{
+    font-size:16px;
+}
+
+.book .book-summary ul.summary ul.articles li{
+    font-size:12px;
+    border-left:1px solid #ddd;
+    margin-left:10px;
+}
+
+
 .book .book-summary .exc-trigger{
     left:0px;
     top:8px;
