@@ -368,11 +368,11 @@ body .book .book-body .page-wrapper .page-inner section.normal pre .hljs, body .
 
 .book .book-summary ul.summary > li.chapter > a,
 .book .book-summary ul.summary > li.chapter > span{
-    font-size:16px;
+    font-size:14px;
 }
 
 .book .book-summary ul.summary ul.articles li{
-    font-size:12px;
+    font-size:14px;
     border-left:1px solid #ddd;
     margin-left:10px;
 }
