@@ -1,6 +1,60 @@
 require( [ 'gitbook' ], function ( gitbook ) {
 
-	gitbook.events.bind('start', function () { });
+	window.onload = function() {
+		var uGitpage = {
+			init: function(){
+				this.summaryInit();
+			},
+			/**
+			 * DOM元素
+			 */
+			DOM:{
+				"$summary": $('.book-summary'),
+				"$bookInner": $('.body-inner'),
+				"footer":document.getElementsByTagName('footer')[0],
+			},
+			/**
+			 * 左侧menu初始化
+			 */
+			summaryInit:function(){
+				var DOM = this.DOM;
+
+			    // 获取浏览器高度
+				var browserH = document.documentElement.clientHeight;
+
+	    		// 左侧目录高度设置
+	    		var sumaryHeightFun = function() {
+	    			// DOM.$bookInner.css('min-height',browserH + 'px');
+	    			var bookInner = document.querySelectorAll('.body-inner')[0];
+	    			bookInner.style.minHeight = browserH + 'px';
+	    			var bookInnerHeight = parseInt(getComputedStyle(bookInner)['height']);
+
+	    			// 判断footer是否进入
+		    		var footerTop = DOM.footer.getBoundingClientRect().top;
+		    		var footerHeight = parseInt(getComputedStyle(DOM.footer)['height']);
+		    		var footerInner = browserH - footerTop;
+
+	    			if(footerInner >= 0){
+		    			DOM.$summary.css('height', browserH - footerInner + 'px');
+		    			DOM.$summary.children('nav').eq(0).css('height',browserH - footerInner - 30 + 'px');
+		    		} else {
+		    			DOM.$summary.css('height', browserH + 'px');
+		    			DOM.$summary.children('nav').eq(0).css('height',browserH - 30 + 'px');
+		    		}
+	    		};
+	    		sumaryHeightFun();
+		    	
+			}
+
+		};
+
+		uGitpage.init();
+
+
+	};
+
+	gitbook.events.bind('start', function () {
+	 });
 
 	gitbook.events.bind('page.change', function () {
 			/**
@@ -65,22 +119,24 @@ require( [ 'gitbook' ], function ( gitbook ) {
 			    $('body').css('display','block');
 			    document.body.scrollTop = 0;
 
-			    // Menu scroll
-			    
-		    	// HEAD Height
-		    	var header = document.getElementsByTagName('header')[0];
-		    	var banner = document.querySelectorAll('.banner')[0];
-		    	var headerHt = parseFloat(getComputedStyle(header)['height']);
-		    	var bannerHt = parseFloat(getComputedStyle(banner)['height']);
-		    	var headAddHt = headerHt + bannerHt;
+			    // 设置左侧目录最大高度 : browser height - footerheight - leftmenuMargintop
+				var browserH = document.documentElement.clientHeight;
+			    DOM.$bookInner.css('min-height',browserH + 'px');
 
+			    // Menu scroll
 			    function menuScroll(){
-				    document.body.onscroll = function(){
-				    	var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
+			    	// HEAD Height
+		    		var header = document.getElementsByTagName('header')[0];
+			    	var banner = document.querySelectorAll('.banner')[0];
+			    	var headerHt = parseFloat(getComputedStyle(header)['height']);
+			    	var bannerHt = parseFloat(getComputedStyle(banner)['height']);
+			    	var headAddHt = headerHt + bannerHt;
+
+			    	var browserH = document.documentElement.clientHeight;
+
+			    	var viewFunc = function() {
+			    		var bodyht = document.body.scrollTop || document.documentElement.scrollTop;
 				    	var contain = document.querySelectorAll('.book .container')[0];
-				    	// console.log(contain.offsetWidth,contain.clientWidth);
-				    	// console.log('offleft' + contain.offsetLeft);
-				    	// console.log('getClient' + contain.getBoundingClientRect().left);
 				    	var leftPadding = parseInt(getComputedStyle(contain)['padding-left']);
 				    	var leftBasic = contain.getBoundingClientRect().left;
 				    	var leftDis = leftBasic + leftPadding;
@@ -95,21 +151,38 @@ require( [ 'gitbook' ], function ( gitbook ) {
 				    		$('#anchors-navbar').css('top',anchorTop +'px');
 				    	}
 
-				    	
+			    		// 判断底部进入
+				    	var bookInner = document.querySelectorAll('.body-inner')[0];
+		    			bookInner.style.minHeight = browserH + 'px';
+		    			var bookInnerHeight = parseInt(getComputedStyle(bookInner)['height']);
 
-				    };
+		    			// 判断footer是否进入
+		    			var footer =document.getElementsByTagName('footer')[0];
+			    		var footerTop = footer.getBoundingClientRect().top;
+			    		var footerHeight = parseInt(getComputedStyle(footer)['height']);
+			    		var footerInner = browserH - footerTop;
+			    		console.log()
+		    			if(footerInner >= 0){
+			    			// console.log('scroll in browser');
+			    			DOM.$summary.css('height', browserH - footerInner + 'px');
+			    			DOM.$summary.children('nav').eq(0).css('height',browserH - footerInner - 30 + 'px');
+			    		} else {
+			    			// console.log('scroll out browser');
+			    			DOM.$summary.css('height', browserH + 'px');
+			    			DOM.$summary.children('nav').eq(0).css('height',browserH - 30 + 'px');
+			    		}
+			    	};
+
+				    document.body.onscroll = viewFunc();
+				    window.onresize = viewFunc();
 			    }
-			    menuScroll();
+			    // menuScroll();
 			    setInterval(menuScroll, 1);
 
 			    var oH = document.body.offsetHeight;
 			    var h = parseInt(oH) - 80;
 
-			    // 设置左侧目录最大高度 : browser height - footerheight - leftmenuMargintop
-				var browserH = document.documentElement.clientHeight;
-				DOM.$summary.css('height', browserH - 163 + 'px');
-			    DOM.$summary.children('nav').eq(0).css('height',parseInt(oH) - 193 + 'px');
-			    DOM.$bookInner.css('min-height',browserH - 133 + 'px');
+			    
 				},
 
 				/**
