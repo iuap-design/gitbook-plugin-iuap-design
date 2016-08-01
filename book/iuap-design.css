@@ -285,6 +285,10 @@ table.u-table-base.u-table-striped thead tr{
 
 }
 
+.book .book-body .page-wrapper .page-inner section.normal .clockpicker-tick{
+    word-wrap: normal;
+}
+
 
 .u-message .u-msg-close{
     top: 12px !important;
