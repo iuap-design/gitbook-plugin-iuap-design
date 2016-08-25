@@ -291,7 +291,8 @@ table.u-table-base.u-table-striped thead tr{
 
 
 .u-message .u-msg-close{
-    top: 12px !important;
+    top: 8px !important;//宋杨阳修改提示消息时，“x”号不居中时修改
+    /*top: 12px !important;*/
     right: 15px !important;
 }
 .u-breadcrumb{
@@ -708,4 +709,12 @@ header.navbar .logo{
     border: 3px solid #FFF !important;
     -webkit-box-shadow: 0 0 3px rgba(0,0,0,.35) !important;
     box-shadow: 0 0 3px rgba(0,0,0,.35) !important;
+}
+/***combobox下拉框padding值修改***/
+.u-combo .u-combo-ul{
+    padding: 0 !important;
+}
+/*修改图片画廊左右padding不一致问题*/
+.example-content .u-gallery{
+    padding: 0 !important;
 }
