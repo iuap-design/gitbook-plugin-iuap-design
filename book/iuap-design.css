@@ -718,3 +718,40 @@ header.navbar .logo{
 .example-content .u-gallery{
     padding: 0 !important;
 }
+
+
+.book .book-body .page-wrapper .page-inner section.normal .u-counter-lg > .u-counter-number, .u-counter-lg .u-counter-number-group {
+    font-size: 40px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .u-counter > .u-counter-number, .u-counter .u-counter-number-group{
+    font-size: 20px;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .u-counter-md > .u-counter-number, .u-counter-md .u-counter-number-group {
+    font-size: 30px;
+
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .u-counter-sm > .u-counter-number, .u-counter-sm .u-counter-number-group {
+    font-size: 14px;
+}
+
+ .book .book-body .page-wrapper .page-inner section.normal ul.nav-list {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal   .u-navbar-default .u-navbar-nav > li > a {
+    color: rgb(117,117,117);
+}
+
+
+.book .book-body .page-wrapper .page-inner section.normal .u-navbar-default .u-navbar-brand {
+    color: rgb(66,66,66);
+}
+
+.book .book-body .page-wrapper .page-inner section.normal .u-navbar-default .u-navbar-toolbar > li > a {
+    color: rgb(117,117,117);
+}
