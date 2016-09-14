@@ -278,8 +278,7 @@ table.u-table-base.u-table-striped thead tr{
     border: 1px solid rgb(76,175,80);
 }
 
-.book .book-body .page-wrapper .page-inner section.normal .u-date-panel,
-.book .book-body .page-wrapper .page-inner section.normal .u-date-panel *
+.book .book-body .page-wrapper .page-inner section.normal .u-date-panel
 {
     box-sizing: content-box;
 
